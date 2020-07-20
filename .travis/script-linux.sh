@@ -14,7 +14,13 @@ cat out/Default/args.gn
 gn gen out/Default
 ninja -C out/Default
 
-# we just copy the entire tree into install-ext
+# we just copy the entire crashpad tree into install-ext
 mkdir $TRAVIS_BUILD_DIR/install-ext
 cp -R $TRAVIS_BUILD_DIR/build/crashpad $TRAVIS_BUILD_DIR/install-ext/.
+
+# build and install breakpad
+cd $TRAVIS_BUILD_DIR/build/breakpad/src
+./configure --prefix=$TRAVIS_BUILD_DIR/build/install-ext
+make -j
+make install
 

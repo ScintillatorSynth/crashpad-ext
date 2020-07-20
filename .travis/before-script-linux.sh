@@ -9,7 +9,10 @@ mkdir build
 cd build
 fetch crashpad
 
-# boringssl checkout
+# breakpad checkout
+fetch breakpad
+
+# boringssl checkout and build
 cd $TRAVIS_BUILD_DIR/build
 git clone https://github.com/google/boringssl
 cd boringssl
