@@ -14,7 +14,6 @@ git clone https://github.com/google/boringssl
 cd boringssl
 mkdir build
 cd build
-cmake ..
-make -j
-
+cmake -GNinja ..
+ninja
 

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$TRAVIS_HOME/depot_tools:$PATH
+
 # in-tree build
 cd $TRAVIS_BUILD_DIR/build/crashpad
 mkdir -p out/Default
