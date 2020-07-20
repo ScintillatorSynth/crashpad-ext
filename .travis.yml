@@ -21,7 +21,7 @@ before_deploy:
     - mkdir -p $HOME/binaries/crashpad-ext
     - export TARBALL=crashpad-ext-$TRAVIS_OS_NAME-$TRAVIS_COMMIT.tgz
     - export HASHFILE=$HOME/binaries/crashpad-ext/crashpad-ext-$TRAVIS_OS_NAME-$TRAVIS_COMMIT.sha256
-    - cd $TRAVIS_BUILD_DIR/build/install-ext && tar czf $HOME/binaries/crashpad-ext/$TARBALL *
+    - cd $TRAVIS_BUILD_DIR/install-ext && tar czf $HOME/binaries/crashpad-ext/$TARBALL *
     - |-
         cd $HOME/binaries/crashpad-ext
         if [[ $TRAVIS_OS_NAME = "windows" ]]; then

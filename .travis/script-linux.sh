@@ -20,7 +20,7 @@ cp -R $TRAVIS_BUILD_DIR/crashpad/crashpad $TRAVIS_BUILD_DIR/install-ext/.
 
 # build and install breakpad
 cd $TRAVIS_BUILD_DIR/breakpad/src
-./configure --prefix=$TRAVIS_BUILD_DIR/build/install-ext
+./configure --prefix=$TRAVIS_BUILD_DIR/install-ext
 make -j
 make install
 
