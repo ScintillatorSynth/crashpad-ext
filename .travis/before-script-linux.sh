@@ -8,3 +8,13 @@ mkdir build
 cd build
 fetch crashpad
 
+# boringssl checkout
+cd $TRAVIS_BUILD_DIR/build
+git clone https://github.com/google/boringssl
+cd boringssl
+mkdir build
+cd build
+cmake ..
+make -j
+
+
