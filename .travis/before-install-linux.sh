@@ -12,6 +12,3 @@ tar xzf go1.13.14.linux-amd64.tar.gz
 cd $TRAVIS_HOME
 git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
 
-export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:$PATH
-export GOROOT=$TRAVIS_HOME/go
-

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:$PATH
+export GOROOT=$TRAVIS_HOME/go
+
 # crashpad checkout
 cd $TRAVIS_BUILD_DIR
 mkdir build
