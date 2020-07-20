@@ -5,15 +5,18 @@ export GOROOT=$TRAVIS_HOME/go
 
 # crashpad checkout
 cd $TRAVIS_BUILD_DIR
-mkdir build
-cd build
+mkdir crashpad
+cd crashpad
 fetch crashpad
 
 # breakpad checkout
+cd $TRAVIS_BUILD_DIR
+mkdir breakpad
+cd breakpad
 fetch breakpad
 
 # boringssl checkout and build
-cd $TRAVIS_BUILD_DIR/build
+cd $TRAVIS_BUILD_DIR
 git clone https://github.com/google/boringssl
 cd boringssl
 mkdir build
