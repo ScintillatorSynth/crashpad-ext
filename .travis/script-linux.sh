@@ -1,8 +1,6 @@
 #!/bin/bash
 
-export PATH=$TRAVIS_HOME/depot_tools:$PATH
-
-# in-tree build
+### build crashpad
 cd $TRAVIS_BUILD_DIR/build/crashpad
 mkdir -p out/Default
 echo "crashpad_use_boringssl_for_http_transport_socket=true" > out/Default/args.gn

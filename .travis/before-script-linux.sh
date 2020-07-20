@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export PATH=$TRAVIS_HOME/depot_tools:$PATH
-
 # crashpad checkout
 cd $TRAVIS_BUILD_DIR
 mkdir build
@@ -14,6 +12,6 @@ git clone https://github.com/google/boringssl
 cd boringssl
 mkdir build
 cd build
-cmake -GNinja ..
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
 ninja
 
