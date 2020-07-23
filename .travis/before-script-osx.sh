@@ -1,12 +1,25 @@
 #!/bin/sh
 
-# chromium depot_tools
-mkdir $TRAVIS_BUILD_DIR/build
-cd $TRAVIS_BUILD_DIR/build
-git clone https://chromium.googlesource.com/chromium/tools/depot_tools.git
-mkdir $TRAVIS_BUILD_DIR/breakpad
-cd $TRAVIS_BUILD_DIR/breakpad
+export PATH=$TRAVIS_HOME/depot_tools:$PATH
+
+# crashpad checkout
+cd $TRAVIS_BUILD_DIR
+mkdir crashpad
+cd crashpad
+fetch crashpad
 
 # breakpad checkout
-PATH=$TRAVIS_BUILD_DIR/build/depot_tools:$PATH fetch breakpad
+cd $TRAVIS_BUILD_DIR
+mkdir breakpad
+cd breakpad
+fetch breakpad
+
+# boringssl checkout and build
+cd $TRAVIS_BUILD_DIR
+git clone https://github.com/google/boringssl
+cd boringssl
+mkdir build
+cd build
+cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
+ninja
 
