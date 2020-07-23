@@ -17,9 +17,9 @@ ninja -C out/Default
 mkdir $TRAVIS_BUILD_DIR/install-ext
 cp -R $TRAVIS_BUILD_DIR/crashpad/crashpad $TRAVIS_BUILD_DIR/install-ext/.
 
-# build and install breakpad
-cd $TRAVIS_BUILD_DIR/breakpad/src
-./configure --prefix=$TRAVIS_BUILD_DIR/build/install-ext
-make -j
-make install
+# build and install breakpad, all we need is the dump_syms binary
+cd $TRAVIS_BUILD_DIR/breakpad/src/src/tools/mac/dump_syms
+xcodebuild -project dump_syms.xcodeproj
+mkdir $TRAVIS_BUILD_DIR/install-ext/bin
+cp build/Release/dump_syms $TRAVIS_BUILD_DIR/install-ext/bin/.
 
