@@ -1,5 +1,5 @@
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
-set PATH=c:\programdata\chocolatey\bin;%TRAVIS_HOME%\depot_tools;c:\go\bin;%PATH%
+set PATH=%TRAVIS_HOME%\depot_tools;c:\go\bin;%PATH%
 
 echo "---- FETCH CRASHPAD"
 cd %TRAVIS_BUILD_DIR%
