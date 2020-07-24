@@ -8,5 +8,5 @@ ninja -C out\Default
 
 echo "---- BUILD BREAKPAD DUMP_SYMS"
 cd %TRAVIS_BUILD_DIR%\breakpad\src\src\tools\windows\dump_syms
-msbuild dump_syms.vcproj
+devenv /build dump_syms.vcproj
 
