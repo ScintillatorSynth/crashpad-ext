@@ -18,6 +18,6 @@ cd %TRAVIS_BUILD_DIR%
 cd boringssl
 mkdir build
 cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER=cl -DCMAKE_CXX_COMPILER=cl ..
-ninja
+cmake -DCMAKE_GENERATOR_PLATFORM=x64 ..
+cmake --build . --config Release
 
