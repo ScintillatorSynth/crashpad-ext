@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# choco install golang openssl ninja
+choco install openssl ninja
 
 # depot_tools setup
 mkdir $TRAVIS_HOME/depot_tools
