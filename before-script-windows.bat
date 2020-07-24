@@ -1,5 +1,7 @@
 set DEPOT_TOOLS_UPDATE=0
-set PATH=%TRAVIS_HOME%\depot_tools;%PATH%
+set PATH=%PATH%;%TRAVIS_HOME%\depot_tools
+
+set
 
 cd %TRAVIS_BUILD_DIR%
 mkdir crashpad
