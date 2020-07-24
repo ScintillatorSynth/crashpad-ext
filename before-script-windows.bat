@@ -13,10 +13,3 @@ mkdir breakpad
 cd breakpad
 fetch breakpad
 
-echo "----- FETCH BORINGSSL"
-cd %TRAVIS_BUILD_DIR%\boringssl
-mkdir build
-cd build
-cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-ninja
-
