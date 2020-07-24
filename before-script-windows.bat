@@ -1,8 +1,5 @@
-set DEPOT_TOOLS_UPDATE=0
-set GOPATH=c:\Go\bin\go
-set PATH=%PATH%;%GOPATH%;%TRAVIS_HOME%\depot_tools
-
-set
+set DEPOT_TOOLS_WIN_TOOLCHAIN=0
+set PATH=%TRAVIS_HOME%\depot_tools;%PATH%
 
 cd %TRAVIS_BUILD_DIR%
 mkdir crashpad
