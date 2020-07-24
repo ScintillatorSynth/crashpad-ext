@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choco install openssl ninja golang
+choco install openssl ninja golang nasm
 
 # depot_tools setup
 mkdir $TRAVIS_HOME/depot_tools
