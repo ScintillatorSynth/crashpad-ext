@@ -1,5 +1,6 @@
 set DEPOT_TOOLS_UPDATE=0
-set PATH=%PATH%;%TRAVIS_HOME%\depot_tools
+set GOPATH=c:\Go\bin\go
+set PATH=%PATH%;%GOPATH%;%TRAVIS_HOME%\depot_tools
 
 set
 
