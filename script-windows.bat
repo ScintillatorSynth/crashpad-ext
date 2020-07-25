@@ -7,7 +7,6 @@ mkdir out
 cd out
 mkdir Default
 cd Default
-echo crashpad_use_boringssl_for_http_transport_socket=true > args.gn
 cd %TRAVIS_BUILD_DIR%\crashpad\crashpad
 gn gen out\Default
 ninja -C out\Default
