@@ -4,7 +4,8 @@ export TRAVIS_WIN_DIR=`cygpath -w $TRAVIS_BUILD_DIR`
 cd $TRAVIS_BUILD_DIR/crashpad/crashpad
 mkdir -p out/Default
 echo "target_cpu=\"x64\"" > out/Default/args.gn
-echo "extra_ldflags=\"/MT /LTCG\"" >> out/Default/args.gn
+echo "extra_cflags=\"/MT\"" >> out/Defaults/args.gn
+echo "extra_ldflags=\"/LTCG\"" >> out/Default/args.gn
 echo "args.gn:"
 cat out/Default/args.gn
 
