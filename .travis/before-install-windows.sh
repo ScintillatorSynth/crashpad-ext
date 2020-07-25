@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choco install openssl ninja golang nasm visualstudio2017community
+choco install openssl ninja golang nasm visualstudio2017community visualstudio2017-workload-nativedesktop
 
 # depot_tools setup
 mkdir $TRAVIS_HOME/depot_tools
