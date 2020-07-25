@@ -7,6 +7,9 @@ mkdir out
 cd out
 mkdir Default
 cd Default
+echo target_cpu=x64 > args.gn
+echo "args.gn:"
+type args.gn
 cd %TRAVIS_BUILD_DIR%\crashpad\crashpad
 gn gen out\Default
 ninja -C out\Default
