@@ -8,15 +8,10 @@ cd out
 mkdir Default
 cd Default
 echo target_cpu="x64" > args.gn
+echo crashpad_use_boringssl_for_http_transport_socket=true >> args.gn
 echo "args.gn:"
 type args.gn
 cd %TRAVIS_BUILD_DIR%\crashpad\crashpad
 gn gen out\Default
 ninja -C out\Default
-
-echo "---- BUILD BREAKPAD DUMP_SYMS"
-cd %TRAVIS_BUILD_DIR%\breakpad\src\src\tools\windows\dump_syms
-set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
-set PATH=%MSBUILD_PATH%;%PATH%
-MSBuild.exe -p:Configuration=Relese -p:Platform=x64 dump_syms.vcproj
 
