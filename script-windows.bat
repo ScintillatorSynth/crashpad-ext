@@ -16,5 +16,7 @@ ninja -C out\Default
 
 echo "---- BUILD BREAKPAD DUMP_SYMS"
 cd %TRAVIS_BUILD_DIR%\breakpad\src\src\tools\windows\dump_syms
-devenv /build dump_syms.vcproj
+set MSBUILD_PATH="c:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin"
+set PATH=%MSBUILD_PATH%;%PATH%
+MSBuild.exe -p:Configuration=Relese -p:Platform=x64 dump_syms.vcproj
 
