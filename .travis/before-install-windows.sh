@@ -1,6 +1,6 @@
 #!/bin/bash
 
-choco install openssl ninja golang nasm
+choco install openssl ninja golang nasm visualstudio2017community
 
 # depot_tools setup
 mkdir $TRAVIS_HOME/depot_tools

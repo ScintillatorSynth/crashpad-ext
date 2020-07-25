@@ -1,16 +1,13 @@
 set DEPOT_TOOLS_WIN_TOOLCHAIN=0
 set PATH=%TRAVIS_HOME%\depot_tools;c:\go\bin;%PATH%
 
-echo "---- finding windows sdk"
-%TRAVIS_BUILD_DIR%\find-windows-sdk.bat
-
 echo "---- NINJA CRASHPAD"
 cd %TRAVIS_BUILD_DIR%\crashpad\crashpad
 mkdir out
 cd out
 mkdir Default
 cd Default
-echo win_toolchain_path="%WindowsSdkPath%" > args.gn
+echo crashpad_use_boringssl_for_http_transport_socket=true > args.gn
 cd %TRAVIS_BUILD_DIR%\crashpad\crashpad
 gn gen out\Default
 ninja -C out\Default
