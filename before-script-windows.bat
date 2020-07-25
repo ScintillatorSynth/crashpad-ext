@@ -13,11 +13,3 @@ mkdir breakpad
 cd breakpad
 fetch breakpad
 
-echo "----- BUILD BORINGSSL"
-cd %TRAVIS_BUILD_DIR%
-cd boringssl
-mkdir build
-cd build
-cmake -DCMAKE_GENERATOR_PLATFORM=x64 ..
-cmake --build . --config Release
-

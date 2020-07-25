@@ -4,10 +4,6 @@ export TRAVIS_WIN_DIR=`cygpath -w $TRAVIS_BUILD_DIR`
 cd $TRAVIS_BUILD_DIR/crashpad/crashpad
 mkdir -p out/Default
 echo "target_cpu=\"x64\"" > out/Default/args.gn
-# TODO: BoringSSL may not be a requirement for ssl uploads on Windows, confirm
-#echo "crashpad_use_boringssl_for_http_transport_socket=true" >> out/Default/args.gn
-echo "extra_cflags=\"/I$TRAVIS_WIN_DIR\\boringssl\"" >> out/Default/args.gn
-echo "extra_ldflags=\"$TRAVIS_WIN_DIR\\boringssl\\build\\ssl\\Release\\ssl.lib $TRAVIS_WIN_DIR\\boringssl\\build\\crypto\\Release\\crypto.lib\"" >> out/Default/args.gn
 echo "args.gn:"
 cat out/Default/args.gn
 
