@@ -2,11 +2,11 @@ language: cpp
 
 matrix:
     include:
-        - os: osx
-          osx_image: xcode11.1
-        - os: linux
-          dist: bionic
-          #- os: windows
+        #        - os: osx
+        #  osx_image: xcode11.1
+        #- os: linux
+        #  dist: bionic
+        - os: windows
 
 before_install:
     - $TRAVIS_BUILD_DIR/.travis/before-install-$TRAVIS_OS_NAME.sh
