@@ -11,8 +11,8 @@ echo "extra_cflags=\"-I$TRAVIS_BUILD_DIR/boringssl\"" >> out/Default/args.gn
 echo "extra_ldflags=\"-L$TRAVIS_BUILD_DIR/boringssl/build/ssl/libssl.a -L$TRAVIS_BUILD_DIR/boringssl/build/crypto/libcrypto.a\"" >> out/Default/args.gn
 echo "args.gn:"
 cat out/Default/args.gn
-gn gen out/Default
-ninja -C out/Default
+gn gen out/Default  || exit 1
+ninja -C out/Default || exit 2
 
 # we just copy the entire crashpad tree into install-ext
 mkdir $TRAVIS_BUILD_DIR/install-ext

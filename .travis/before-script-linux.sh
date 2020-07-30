@@ -16,11 +16,12 @@ cd breakpad
 fetch breakpad
 
 # boringssl checkout and build
+echo "** building BoringSSL **"
 cd $TRAVIS_BUILD_DIR
 git clone https://github.com/google/boringssl
 cd boringssl
 mkdir build
 cd build
 cmake -GNinja -DCMAKE_BUILD_TYPE=Release ..
-ninja
+ninja || exit 1
 
