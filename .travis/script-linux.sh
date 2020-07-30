@@ -1,13 +1,13 @@
 #!/bin/bash
 
-export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:$PATH
+export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:/usr/local/ssl/bin:$PATH
 export GOROOT=$TRAVIS_HOME/go
 
 ### build crashpad
 cd $TRAVIS_BUILD_DIR/crashpad/crashpad
 mkdir -p out/Default
 echo "crashpad_use_boringssl_for_http_transport_socket=true" > out/Default/args.gn
-echo "extra_cflags=\"-I$TRAVIS_BUILD_DIR/boringssl\"" >> out/Default/args.gn
+echo "extra_cflags=\"-I$TRAVIS_BUILD_DIR/boringssl -I/usr/local/ssl/include\"" >> out/Default/args.gn
 echo "extra_ldflags=\"-L$TRAVIS_BUILD_DIR/boringssl/build/ssl/libssl.a -L$TRAVIS_BUILD_DIR/boringssl/build/crypto/libcrypto.a\"" >> out/Default/args.gn
 echo "args.gn:"
 cat out/Default/args.gn

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:$PATH
+export PATH=$TRAVIS_HOME/depot_tools:$TRAVIS_HOME/go/bin:/usr/local/ssl/bin:$PATH
 export GOROOT=$TRAVIS_HOME/go
 
 # crashpad checkout
