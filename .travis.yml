@@ -5,7 +5,7 @@ matrix:
         - os: osx
           osx_image: xcode11.1
         - os: linux
-          dist: bionic
+          dist: xenial
         - os: windows
 
 before_install:
