@@ -12,10 +12,9 @@ sudo update-alternatives --install /usr/bin/g++ g++ `which g++-7` 10
 sudo update-alternatives --set cc /usr/bin/gcc
 sudo update-alternatives --set c++ /usr/bin/g++
 
-sudo apt-get uninstall libssl-dev
+sudo apt-get remove --yes libssl-dev
 
 # openssl 1.1.1 (needed to build crashpad)
-sudo apt-get install --yes checkinstall z1lib1g-dev
 cd /usr/local/src
 sudo wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
 sudo tar -xzf openssl-1.1.1g.tar.gz
