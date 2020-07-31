@@ -19,7 +19,7 @@ mkdir $TRAVIS_BUILD_DIR/install-ext
 cp -R $TRAVIS_BUILD_DIR/crashpad/crashpad $TRAVIS_BUILD_DIR/install-ext/.
 
 # also copy the entire ssl tree for Xenial builds
-cp -R /usr/local/ssl $TRAVIS_BUILD_DIR/.
+cp -R /usr/local/ssl $TRAVIS_BUILD_DIR/install-ext/.
 
 # build and install breakpad
 cd $TRAVIS_BUILD_DIR/breakpad/src

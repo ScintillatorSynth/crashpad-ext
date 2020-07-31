@@ -23,7 +23,8 @@ sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib ||
 sudo make || exit 2
 sudo make test || exit 3
 sudo make install || exit 4
-sudo echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-1.1.1g.conf
+echo "/usr/local/ssl/lib" > $TRAVIS_HOME/openssl-1.1.1g.conf
+sudo mv $TRAVIS_HOME/openssl-1.1.g.conf /etc/ld.so.conf.d/.
 sudo ldconfig -v || exit 5
 
 # go 1.13 (prerequisite of BoringSSL, not available in apt)
