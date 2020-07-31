@@ -19,14 +19,12 @@ cd /usr/local/src
 sudo wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
 sudo tar -xzf openssl-1.1.1g.tar.gz
 cd openssl-1.1.1g
-sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl zlib -static || exit 1
+sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib || exit 1
 sudo make || exit 2
 sudo make test || exit 3
 sudo make install || exit 4
-#sudo echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-1.1.1g.conf
-#sudo ldconfig -v || exit 5
-# sudo rm -f /usr/local/ssl/lib/libssl*so*
-# sudo rm -f /usr/local/ssl/lib/libcrypto*so*
+sudo echo "/usr/local/ssl/lib" > /etc/ld.so.conf.d/openssl-1.1.1g.conf
+sudo ldconfig -v || exit 5
 
 # go 1.13 (prerequisite of BoringSSL, not available in apt)
 cd $TRAVIS_HOME
