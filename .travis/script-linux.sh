@@ -18,6 +18,9 @@ ninja -C out/Default || exit 2
 mkdir $TRAVIS_BUILD_DIR/install-ext
 cp -R $TRAVIS_BUILD_DIR/crashpad/crashpad $TRAVIS_BUILD_DIR/install-ext/.
 
+# also copy the entire ssl tree for Xenial builds
+cp -R /usr/local/ssl $TRAVIS_BUILD_DIR/.
+
 # build and install breakpad
 cd $TRAVIS_BUILD_DIR/breakpad/src
 ./configure --prefix=$TRAVIS_BUILD_DIR/install-ext
