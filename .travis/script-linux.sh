@@ -14,9 +14,13 @@ cat out/Default/args.gn
 gn gen out/Default  || exit 1
 ninja -C out/Default || exit 2
 
+# copy SSL dynamic libraries into crashpad output dir
+find /usr/local/ssl -name '*.so' -exec cp -v {} $TRAVIS_BUILD_DIR/crashpad/crashpad/out/Default/. \;
+
 # we just copy the entire crashpad tree into install-ext
 mkdir $TRAVIS_BUILD_DIR/install-ext
 cp -R $TRAVIS_BUILD_DIR/crashpad/crashpad $TRAVIS_BUILD_DIR/install-ext/.
+
 
 # build and install breakpad
 cd $TRAVIS_BUILD_DIR/breakpad/src
