@@ -19,7 +19,7 @@ cd /usr/local/src
 sudo wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
 sudo tar -xzf openssl-1.1.1g.tar.gz
 cd openssl-1.1.1g
-sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl no-shared zlib || exit 1
+sudo ./config --prefix=/usr/local/ssl --openssldir=/usr/local/ssl no-shared zlib -static || exit 1
 sudo make || exit 2
 sudo make test || exit 3
 sudo make install || exit 4
